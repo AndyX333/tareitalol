@@ -1,0 +1,264 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>♡ PRACTICA METODOS ♡</title>
+
+    <!-- TIPOGRAFÍAS PIXEL -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'VT323', monospace;
+            text-align: center;
+            margin: 0;
+            padding: 25px 10px;
+
+            background-color: #ffe5f2;
+            background-image: url("im/1.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* DECORACIONES SUPERIORES E INFERIORES */
+
+        .decoracion {
+            width: 330px;
+            border: none;
+            box-shadow: none;
+            margin: 5px;
+        }
+
+        /* CAJA PRINCIPAL */
+
+        .caja {
+            background: rgba(255, 245, 252, 0.95);
+            padding: 25px;
+            margin: 15px auto;
+            width: 60%;
+            max-width: 700px;
+
+            border: 4px double #f58cc5;
+            border-radius: 15px;
+
+            box-shadow: 0 0 15px #ffaddb;
+        }
+
+        /* TITULO */
+
+        h1 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 19px;
+            color: #ed70ae;
+            text-shadow: 3px 3px #ffcce8;
+            line-height: 1.8;
+        }
+
+        h2 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 12px;
+            color: #d66da9;
+        }
+
+        /* TEXTOS */
+
+        p {
+            font-size: 25px;
+            color: #a64e83;
+        }
+
+        .destacado {
+            font-weight: bold;
+            color: #d94b9b;
+        }
+
+        .subtitulo {
+            font-size: 22px;
+            color: #e47ab2;
+        }
+
+        /* BOTONES */
+
+        button {
+            font-family: 'VT323', monospace;
+            font-size: 23px;
+            padding: 10px 20px;
+            cursor: pointer;
+
+            border: 2px solid #f58cc5;
+            border-radius: 8px;
+
+            background: #ffc5e4;
+            color: #984c7d;
+
+            margin: 5px;
+            box-shadow: 3px 3px #e78ab9;
+        }
+
+        button:hover {
+            background: #f47ab9;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* IMAGEN */
+
+        img {
+            max-width: 100%;
+            border: 3px solid #ffa5d5;
+            border-radius: 8px;
+        }
+
+        /* SEPARADORES */
+
+        hr {
+            border: none;
+            border-top: 2px dashed #f39acb;
+            margin: 25px 0;
+        }
+
+        /* PIE DE PAGINA */
+
+        .footer {
+            font-size: 21px;
+            color: #d66da9;
+        }
+
+        /* ADAPTACION A PANTALLAS */
+
+        @media (max-width: 700px) {
+            .caja {
+                width: 95%;
+            }
+
+            h1 {
+                font-size: 13px;
+            }
+
+            h2 {
+                font-size: 10px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- GIF SUPERIOR -->
+    <img src="im/lol.gif" class="decoracion" alt="Decoración kawaii">
+
+    <div class="caja">
+
+        <h1>♡ TAREITAA ♡</h1>
+
+        <p class="subtitulo">
+            ☆ Welcome! ☆
+        </p>
+
+        <hr>
+
+        <!-- 1. INNERHTML -->
+
+        <h2>01. INNERHTML</h2>
+
+        <p id="mensaje">
+            PRESIONAMEEE ꒰୨୧ ｡• ◡ •｡꒱
+            <b>innerHTML</b>.
+        </p>
+
+        <button onclick="cambiarTexto()">
+            ☆ Cambiar texto ☆
+        </button>
+
+        <hr>
+
+        <!-- 2. GETELEMENTBYID -->
+
+        <h2>02. GETELEMENTBYID</h2>
+
+        <p id="contenedor-imagen">
+            Aquí aparecerá una imagen ♡
+        </p>
+
+        <button onclick="mostrarImagen()">
+            ☆ Mostrar imagen ☆
+        </button>
+
+        <hr>
+
+        <!-- 3. QUERYSELECTOR -->
+
+        <h2>03. QUERYSELECTOR</h2>
+
+        <p class="destacado">
+            Cambiar textito ♡ querySelector.
+        </p>
+
+        <button onclick="cambiarEstilo()">
+            ☆ Cambiar estilo ☆
+        </button>
+
+        <hr>
+
+        <p class="footer">
+            ✧･ﾟ: *✧･ﾟ:* ⋆ ✧ ⋆ (＾▽＾) ⋆ ✧ ⋆! *:･ﾟ✧*:･ﾟ✧
+        </p>
+
+        <p class="footer">
+            ♡ Made with HTML, CSS & JavaScript ♡
+        </p>
+
+    </div>
+
+    <!-- GIF INFERIOR -->
+    <img src="im/222.gif " class="decoracion" alt="Decoración kawaii">
+
+    <script>
+
+        // 1. Método: innerHTML
+
+        function cambiarTexto() {
+
+            document.getElementById("mensaje").innerHTML =
+            "(˶◜ᵕ◝˶)♡ YAY <b>innerHTML</b>.";
+
+        }
+
+
+        // 2. Método: getElementById()
+
+        function mostrarImagen() {
+
+            document.getElementById("contenedor-imagen").innerHTML =
+            '<img src="im/nya.gif" alt="Ejemplo de imagen" style="border-radius: 5px; margin-top: 10px;">';
+
+        }
+
+
+        // 3. Método: querySelector()
+
+        function cambiarEstilo() {
+
+            const elemento = document.querySelector(".destacado");
+
+            elemento.style.color = "#ff4757";
+            elemento.style.fontSize = "20px";
+            elemento.style.textTransform = "uppercase";
+
+        }
+
+    </script>
+
+</body>
+</html>
+```
